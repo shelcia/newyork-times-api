@@ -1,0 +1,81 @@
+.btn {
+  margin: 10px;
+}
+.cbody {
+  background-color: #ffffff;
+}
+.blue {
+  color: dodgerblue;
+}
+.fontTimes {
+  font-family: "Times New Roman", Times, serif;
+}
+.dateclass {
+  color: #6c757d;
+  padding: 0;
+  margin: 0;
+}
+.img-custom {
+  vertical-align: middle;
+  border: none;
+  height: 100%;
+  min-width: 100%;
+  width: auto;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 0px;
+}
+h1 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.1rem;
+}
+p {
+  font-size: 0.8rem;
+}
+.spanleft {
+  padding-left: 10px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: dodgerblue;
+  overflow: scroll;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.col-sm-4:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.button-text {
+  font-size: 0.6rem;
+}
+.card {
+  border: none;
+  box-shadow: 3px 3px 12px #00000029;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 12px 12px 12px #00000029;
+}
