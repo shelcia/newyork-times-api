@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>New York Times Api</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="text-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/new-york-times.svg" width="120px" alt="logo" />
+        </a>
+      </div>
+    </nav>
+    <div class="container text-center">
+      <p class="blue"><b>Pick your favorite topics</b></p>
+      <p>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#arts"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('arts')"
+        >
+          Art
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#business"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('business')"
+        >
+          Business
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#fashion"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('fashion')"
+        >
+          Fashion
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#food"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('food')"
+        >
+          Food
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#health"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('health')"
+        >
+          Health
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#home"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('home')"
+        >
+          Home
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#insider"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('insider')"
+        >
+          Insider
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#magazine"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('magazine')"
+        >
+          Magazine
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#movies"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('movies')"
+        >
+          Movies
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#nyregion"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('nyregion')"
+        >
+          NY Region
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#obituaries"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('obituaries')"
+        >
+          Obituaries
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#opinion"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('opinion')"
+        >
+          Opinion
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#politics"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('politics')"
+        >
+          Politics
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#realestate"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('realestate')"
+        >
+          Real Estate
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#science"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('science')"
+        >
+          Science
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#sports"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('sports')"
+        >
+          Sports
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#sundayreview"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('sundayreview')"
+        >
+          Sunday Review
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#technology"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('technology')"
+        >
+          Technology
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#theater"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('theater')"
+        >
+          Theater
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#tmagazine"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('t-magazine')"
+        >
+          T-Magazine
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#travel"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('travel')"
+        >
+          Travel
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#upshot"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('upshot')"
+        >
+          Upshot
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#us"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('us')"
+        >
+          U.S
+        </button>
+        <button
+          style="font-size:0.8rem;padding: .275rem .65rem"
+          class="btn btn-primary m-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#world"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onclick="Get('world')"
+        >
+          World
+        </button>
+      </p>
+      <div class="collapse" id="arts"></div>
+      <div class="collapse" id="business"></div>
+      <div class="collapse" id="fashion"></div>
+      <div class="collapse" id="food"></div>
+      <div class="collapse" id="health"></div>
+      <div class="collapse" id="home"></div>
+      <div class="collapse" id="insider"></div>
+      <div class="collapse" id="magazine"></div>
+      <div class="collapse" id="movies"></div>
+      <div class="collapse" id="nyregion"></div>
+      <div class="collapse" id="obituaries"></div>
+      <div class="collapse" id="opinion"></div>
+      <div class="collapse" id="politics"></div>
+      <div class="collapse" id="realestate"></div>
+      <div class="collapse" id="science"></div>
+      <div class="collapse" id="sports"></div>
+      <div class="collapse" id="sundayreview"></div>
+      <div class="collapse" id="technology"></div>
+      <div class="collapse" id="theater"></div>
+      <div class="collapse" id="tmagazine"></div>
+      <div class="collapse" id="travel"></div>
+      <div class="collapse" id="upshot"></div>
+      <div class="collapse" id="us"></div>
+      <div class="collapse" id="world"></div>
+    </div>
+    <script>
+      const Get = async sections => {
+        console.log(sections);
+        try {
+          let url = `https://api.nytimes.com/svc/topstories/v2/${sections}.json?api-key=Lqx0tNSsnxpddi48JUHs4r38NyAoAzdh`;
+          //   console.log(url);
+          let reponse = await fetch(url);
+          let data = await reponse.json();
+          //   console.log(data.results);
+          mod_data = data.results;
+          const cards = mod_data
+            .map(
+              card =>
+                `<div class="card card-body mb-2"><div class="container cbody"><div class="row"><div class="col-sm-8 text-left p-4"><h4 class="blue" style="text-transform:uppercase">${card.section}<span class="spanleft">${card.item_type}</span></h4><h1 class="fontTimes">${card.title}</h1><p class="dateclass">${card.created_date}<span class="spanleft">${card.byline}</span></p><p>${card.abstract}</p><a href="${card.short_url}">Continue Reading</a></div><div class="col-sm-4 p-0"><div class="overlay"><div class="text">${card.multimedia[0].caption}</div></div><img src="${card.multimedia[4].url}" class="img-thumbnail img-custom" alt="${card.multimedia[0].copyright}"/></div></div></div></div>`
+            )
+            .join("");
+          //   console.log(cards);
+          if (sections == "arts")
+            arts.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Arts</h2></b></div>` +
+              cards;
+          else if (sections == "business")
+            business.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Business</h2></b></div>` +
+              cards;
+          else if (sections == "fashion")
+            fashion.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Fashion</h2></b></div>` +
+              cards;
+          else if (sections == "food")
+            food.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Food</h2></b></div>` +
+              cards;
+          else if (sections == "health")
+            health.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Health</h2></b></div>` +
+              cards;
+          else if (sections == "home")
+            home.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Home</h2></b></div>` +
+              cards;
+          else if (sections == "insider")
+            insider.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Insider</h2></b></div>` +
+              cards;
+          else if (sections == "magazine")
+            magazine.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Magazine</h2></b></div>` +
+              cards;
+          else if (sections == "movies")
+            movies.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Movies</h2></b></div>` +
+              cards;
+          else if (sections == "nyregion")
+            nyregion.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>NY Region</h2></b></div>` +
+              cards;
+          else if (sections == "obituaries")
+            obituaries.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Obituaries</h2></b></div>` +
+              cards;
+          else if (sections == "opinion")
+            opinion.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Opinions</h2></b></div>` +
+              cards;
+          else if (sections == "politics")
+            politics.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Politics</h2></b></div>` +
+              cards;
+          else if (sections == "realestate")
+            realestate.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Real Estate</h2></b></div>` +
+              cards;
+          else if (sections == "science")
+            science.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Science</h2></b></div>` +
+              cards;
+          else if (sections == "sports")
+            sports.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Sports</h2></b></div>` +
+              cards;
+          else if (sections == "sundayreview")
+            sundayreview.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Sunday Review</h2></b></div>` +
+              cards;
+          else if (sections == "technology")
+            technology.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Technology</h2></b></div>` +
+              cards;
+          else if (sections == "theater")
+            theater.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Theatre</h2></b></div>` +
+              cards;
+          else if (sections == "t-magazine")
+            tmagazine.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>T-Magazine</h2></b></div>` +
+              cards;
+          else if (sections == "travel")
+            travel.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Travel</h2></b></div>` +
+              cards;
+          else if (sections == "upshot")
+            upshot.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>Upshot</h2></b></div>` +
+              cards;
+          else if (sections == "us")
+            us.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>U.S</h2></b></div>` +
+              cards;
+          else if (sections == "world")
+            world.innerHTML =
+              `<div class="text-center blue"><b><h2 style='text-transform:uppercase'>World</h2></b></div>` +
+              cards;
+        } catch {
+          console.log("Fetch Error");
+        }
+      };
+    </script>
+  </body>
+</html>
